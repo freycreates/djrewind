@@ -218,14 +218,14 @@ footer a { text-decoration: none; }
 @keyframes storybar { 0% { transform: scaleX(0); } 20%, 96% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
 .card .storybars + .phone { margin-top: 10px; }
 .phone.swap { position: relative; }
-.phone.swap picture { position: absolute; inset: 0; }
-.phone.swap picture + picture { animation: swap 6s ease-in-out infinite; }
+.phone.swap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.phone.swap img + img { animation: swap 6s ease-in-out infinite; }
 @keyframes swap { 0%, 40% { opacity: 0; } 50%, 90% { opacity: 1; } 100% { opacity: 0; } }
 @media (max-width: 860px) { .storybars { width: 64%; } }
 @media (prefers-reduced-motion: reduce) {
   .features .card { opacity: 1; transform: none; transition: none; }
   .storybars i::after { animation: none !important; transform: scaleX(1); }
-  .phone.swap picture + picture { animation: none; opacity: 1; }
+  .phone.swap img + img { animation: none; opacity: 1; }
 }
 
 @media (max-width: 860px) {
@@ -359,7 +359,7 @@ footer a { text-decoration: none; }
         <h3 style="margin-top:8px">Your set, in one card.</h3>
         <p>Venue, hours, songs, most played artist, opener and closer.</p>
         <div class="storybars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="phone"><picture><source srcset="assets/recap.avif" type="image/avif"><img src="assets/recap.jpg" alt="The recap of a set at Club Pop" loading="lazy"></picture></div>
+        <div class="phone"><img src="assets/recap.jpg" alt="The recap of a set at Club Pop" loading="lazy"></div>
       </div>
       <div class="card accent" style="--i:1">
         <div class="label">Every month</div>
@@ -373,28 +373,28 @@ footer a { text-decoration: none; }
         <h3 style="margin-top:8px">The Hits or The Journey.</h3>
         <p>Show off your top tracks and artists, or your BPM journey, key and longest track.</p>
         <div class="storybars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="phone swap"><picture><source srcset="assets/setup-hits.avif" type="image/avif"><img src="assets/setup-hits.jpg" alt="The Hits picked in the setup" loading="lazy"></picture><picture><source srcset="assets/setup-journey.avif" type="image/avif"><img src="assets/setup-journey.jpg" alt="The Journey picked in the setup" loading="lazy"></picture></div>
+        <div class="phone swap"><img src="assets/setup-hits.jpg" alt="The Hits picked in the setup" loading="lazy"><img src="assets/setup-journey.jpg" alt="The Journey picked in the setup" loading="lazy"></div>
       </div>
       <div class="card" style="--i:3">
         <div class="label">For techno and house</div>
         <h3 style="margin-top:8px">BPM by BPM.</h3>
         <p>Where you started, where you ended, and how you built the night.</p>
         <div class="storybars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="phone"><picture><source srcset="assets/journey.avif" type="image/avif"><img src="assets/journey.jpg" alt="BPM journey from 143 to 155" loading="lazy"></picture></div>
+        <div class="phone"><img src="assets/journey.jpg" alt="BPM journey from 143 to 155" loading="lazy"></div>
       </div>
       <div class="card" style="--i:4">
         <div class="label">For the crowd favourites</div>
         <h3 style="margin-top:8px">Heavy rotation.</h3>
         <p>Your top 5 artists of the night, the month or the whole year.</p>
         <div class="storybars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="phone"><picture><source srcset="assets/artists.avif" type="image/avif"><img src="assets/artists.jpg" alt="Top 5 artists" loading="lazy"></picture></div>
+        <div class="phone"><img src="assets/artists.jpg" alt="Top 5 artists" loading="lazy"></div>
       </div>
       <div class="card accent" style="--i:5">
         <div class="label">Weddings and private events</div>
         <h3 style="margin-top:8px">Give them their night.</h3>
         <p>The first dance and the whole tracklist, as cards for the couple.</p>
         <div class="storybars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="phone"><picture><source srcset="assets/wedding.avif" type="image/avif"><img src="assets/wedding.jpg" alt="Wedding card for Emma and Sam" loading="lazy"></picture></div>
+        <div class="phone"><img src="assets/wedding.jpg" alt="Wedding card for Emma and Sam" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -454,23 +454,23 @@ footer a { text-decoration: none; }
     <p class="lead" style="margin-top:18px">The whole app and every card you share, in the colour that fits your night.</p>
     <div class="row">
       <figure>
-        <div class="phone"><picture><source srcset="assets/theme-rewind.avif" type="image/avif"><img src="assets/theme-rewind.jpg" alt="DJ Rewind in the Rewind theme" loading="lazy"></picture></div>
+        <div class="phone"><img src="assets/theme-rewind.jpg" alt="DJ Rewind in the Rewind theme" loading="lazy"></div>
         <figcaption><span class="dot" style="background:#FF2E54"></span><span class="dot" style="background:#8FD3FF"></span>Rewind</figcaption>
       </figure>
       <figure>
-        <div class="phone"><picture><source srcset="assets/theme-laser.avif" type="image/avif"><img src="assets/theme-laser.jpg" alt="DJ Rewind in the Laser theme" loading="lazy"></picture></div>
+        <div class="phone"><img src="assets/theme-laser.jpg" alt="DJ Rewind in the Laser theme" loading="lazy"></div>
         <figcaption><span class="dot" style="background:#00F07A"></span><span class="dot" style="background:#28E0FF"></span>Laser</figcaption>
       </figure>
       <figure>
-        <div class="phone"><picture><source srcset="assets/theme-uv.avif" type="image/avif"><img src="assets/theme-uv.jpg" alt="DJ Rewind in the UV theme" loading="lazy"></picture></div>
+        <div class="phone"><img src="assets/theme-uv.jpg" alt="DJ Rewind in the UV theme" loading="lazy"></div>
         <figcaption><span class="dot" style="background:#7A3CFF"></span><span class="dot" style="background:#E4FF3A"></span>UV</figcaption>
       </figure>
       <figure>
-        <div class="phone"><picture><source srcset="assets/theme-chrome.avif" type="image/avif"><img src="assets/theme-chrome.jpg" alt="DJ Rewind in the Chrome theme" loading="lazy"></picture></div>
+        <div class="phone"><img src="assets/theme-chrome.jpg" alt="DJ Rewind in the Chrome theme" loading="lazy"></div>
         <figcaption><span class="dot" style="background:#C8D0DA"></span><span class="dot" style="background:#9ED8FF"></span>Chrome</figcaption>
       </figure>
       <figure>
-        <div class="phone"><picture><source srcset="assets/theme-ade.avif" type="image/avif"><img src="assets/theme-ade.jpg" alt="DJ Rewind in the ADE theme" loading="lazy"></picture></div>
+        <div class="phone"><img src="assets/theme-ade.jpg" alt="DJ Rewind in the ADE theme" loading="lazy"></div>
         <figcaption><span class="dot" style="background:#FFFF07"></span><span class="dot" style="background:#6E6500"></span>ADE</figcaption>
       </figure>
     </div>
@@ -483,12 +483,12 @@ footer a { text-decoration: none; }
     <div class="label">What you'll post</div>
     <h2 style="margin-top:12px">Cards worth posting.</h2>
     <div class="row">
-      <figure style="--i:0"><picture><source srcset="assets/card-bynight.avif" type="image/avif"><img src="assets/card-bynight.jpg" alt="The BPM by night card" loading="lazy"></picture></figure>
-      <figure style="--i:1"><picture><source srcset="assets/card-camelot.avif" type="image/avif"><img src="assets/card-camelot.jpg" alt="The Your Camelot wheel card" loading="lazy"></picture></figure>
-      <figure style="--i:2"><picture><source srcset="assets/card-labels.avif" type="image/avif"><img src="assets/card-labels.jpg" alt="The Top labels card" loading="lazy"></picture></figure>
-      <figure style="--i:3"><picture><source srcset="assets/card-fastest.avif" type="image/avif"><img src="assets/card-fastest.jpg" alt="The Speed record card" loading="lazy"></picture></figure>
-      <figure style="--i:4"><picture><source srcset="assets/card-slots.avif" type="image/avif"><img src="assets/card-slots.jpg" alt="The Warm-up vs closing card" loading="lazy"></picture></figure>
-      <figure style="--i:5"><picture><source srcset="assets/card-weapon.avif" type="image/avif"><img src="assets/card-weapon.jpg" alt="The Your weapon card" loading="lazy"></picture></figure>
+      <figure style="--i:0"><img src="assets/card-bynight.jpg" alt="The BPM by night card" loading="lazy"></figure>
+      <figure style="--i:1"><img src="assets/card-camelot.jpg" alt="The Your Camelot wheel card" loading="lazy"></figure>
+      <figure style="--i:2"><img src="assets/card-labels.jpg" alt="The Top labels card" loading="lazy"></figure>
+      <figure style="--i:3"><img src="assets/card-fastest.jpg" alt="The Speed record card" loading="lazy"></figure>
+      <figure style="--i:4"><img src="assets/card-slots.jpg" alt="The Warm-up vs closing card" loading="lazy"></figure>
+      <figure style="--i:5"><img src="assets/card-weapon.jpg" alt="The Your weapon card" loading="lazy"></figure>
     </div>
   </div>
 </section>
