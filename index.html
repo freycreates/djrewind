@@ -155,6 +155,9 @@ fieldset { border: 0; margin: 0; padding: 0; }
 .error { color: var(--pink); font-weight: 700; font-size: 14px; min-height: 18px; }
 .thanks { display: none; background: var(--black); border-radius: 24px; padding: 32px; }
 .thanks h3 { font-size: 34px; }
+/* After the cards: a Join the beta right where people want them. */
+.wall-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; margin-top: 40px; }
+.wall-cta p { margin: 0; font-size: 22px; font-weight: 900; letter-spacing: -0.03em; }
 
 footer { padding: 40px 0 60px; color: var(--muted); font-weight: 500; font-size: 15px; }
 footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
@@ -470,6 +473,10 @@ footer a { text-decoration: none; }
       <figure style="--i:4"><img src="assets/card-slots.jpg" alt="The Warm-up vs closing card" loading="lazy"></figure>
       <figure style="--i:5"><img src="assets/card-weapon.jpg" alt="The Your weapon card" loading="lazy"></figure>
     </div>
+    <div class="wall-cta">
+      <p>Want these after your next gig?</p>
+      <a class="btn btn-pink" href="#beta">Join the beta</a>
+    </div>
   </div>
 </section>
 
@@ -562,6 +569,8 @@ footer a { text-decoration: none; }
       <div class="thanks" id="thanks" role="status">
         <h3>You're on the list.</h3>
         <p class="lead" style="margin-top:12px">I'll send your TestFlight invite as soon as the beta opens. Follow <a href="https://instagram.com/djrewind.app" target="_blank" rel="noopener" class="pink">@djrewind.app</a> in the meantime.</p>
+        <p class="lead" style="margin-top:12px">Know a DJ who'd love this?</p>
+        <button class="btn btn-pink share-btn" type="button" style="margin-top:14px">Send them DJ Rewind</button>
       </div>
     </div>
   </div>
@@ -675,6 +684,19 @@ form.addEventListener('submit', async (event) => {
 })();
 </script>
 <script>
+// After signing up: send DJ Rewind to a DJ friend (share sheet on iPhone, otherwise copy the link).
+(() => {
+  const btn = document.querySelector('.share-btn');
+  if (!btn) return;
+  const url = 'https://djrewind.app/';
+  btn.addEventListener('click', async () => {
+    if (navigator.share) {
+      try { await navigator.share({ title: 'DJ Rewind', text: 'Your DJ nights, rewound. Join the beta:', url }); } catch {}
+      return;
+    }
+    try { await navigator.clipboard.writeText(url); btn.textContent = 'Link copied'; } catch { location.href = url; }
+  });
+})();
 // Top bar: a copy of the nav that only exists (display:block) once the hero has scrolled past.
 (() => {
   const nav = document.querySelector("nav"), hero = document.getElementById("top");
