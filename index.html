@@ -7,7 +7,7 @@
 <meta name="description" content="Plug in your USB stick after a gig. DJ Rewind turns your play history into Rewinds you can share on Instagram. Join the iPhone beta.">
 <meta property="og:title" content="DJ Rewind: your DJ nights, rewound">
 <meta property="og:description" content="Plug in. Rewind. Share! Your gigs, tracks and BPM journey as Instagram-ready cards. Join the iPhone beta.">
-<meta property="og:image" content="https://djrewind.app/assets/clubpop-poster.jpg">
+<meta property="og:image" content="https://djrewind.app/assets/share-clubpop.jpg">
 <meta property="og:url" content="https://djrewind.app/">
 <link rel="canonical" href="https://djrewind.app/">
 <meta name="theme-color" content="#000000">
@@ -83,7 +83,8 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
   .hero .cta .btn { flex: 0 1 auto; justify-content: center; padding: 13px clamp(10px, 3.6vw, 18px); font-size: clamp(13px, 3.9vw, 15px); white-space: nowrap; }
 }
 .hero small { display: block; margin-top: 14px; color: var(--muted); font-size: 14px; font-weight: 500; }
-.reel { width: 100%; max-width: 380px; margin: 0 auto; aspect-ratio: 9 / 16; border-radius: 34px; overflow: hidden; background: var(--pink); }
+/* The hero video is the iPhone on black, so it floats on the page: no card, no pink around it. */
+.reel { width: 100%; max-width: 380px; margin: 0 auto; aspect-ratio: 9 / 16; overflow: hidden; background: #000; }
 .reel video { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* Steps */
@@ -316,7 +317,7 @@ footer a { text-decoration: none; }
       <small>Free to start. Straight from the stick you played on CDJs. No laptop after the gig.</small>
     </div>
     <div class="reel">
-      <video src="assets/clubpop.mp4" poster="assets/clubpop-poster.jpg" autoplay muted loop playsinline aria-label="DJ Rewind after a gig at Club Pop"></video>
+      <video src="assets/clubpop.mp4?v=2" poster="assets/clubpop-poster.jpg?v=2" autoplay muted loop playsinline aria-label="DJ Rewind after a gig at Club Pop"></video>
     </div>
   </div>
 </header>
