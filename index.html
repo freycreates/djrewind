@@ -47,7 +47,19 @@ p { line-height: 1.5; }
 .label { color: var(--pink); font-weight: 800; font-size: 15px; letter-spacing: 0.02em; }
 
 /* Nav */
-nav { position: sticky; top: 0; z-index: 10; background: rgba(0, 0, 0, 0.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+/* The nav at the top is part of the page and scrolls away, so Safari (Mac and iPhone) keeps its see-through toolbar.
+   A copy (nav.bar) slides in once the hero has scrolled past and is display:none otherwise: iPhone Safari paints the
+   area behind the clock in the colour of any bar stuck to the top, and keeps doing so as long as one exists. */
+nav { position: relative; z-index: 10; }
+nav.bar { position: fixed; top: 0; left: 0; right: 0; display: none; background: #000; animation: bar-in .3s ease; }
+nav.bar.show { display: block; }
+/* Mac: Safari keeps its toolbar see-through there, so the bar is frosted glass like Safari's own.
+   iPhone/iPad: solid black, the same colour Safari paints behind the clock, so the two read as one bar. */
+@media (hover: hover) and (pointer: fine) {
+  nav.bar { background: rgba(0, 0, 0, 0.62); backdrop-filter: blur(22px) saturate(1.5); -webkit-backdrop-filter: blur(22px) saturate(1.5); }
+}
+@keyframes bar-in { from { transform: translateY(-100%); } }
+@media (prefers-reduced-motion: reduce) { nav.bar { animation: none; } }
 nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 900; font-size: 22px; letter-spacing: -0.04em; color: var(--pink); }
 .brand svg { width: 22px; height: 24px; }
@@ -668,6 +680,20 @@ form.addEventListener('submit', async (event) => {
     }
   }, { threshold: 0.25 });
   document.querySelectorAll('video[data-src]').forEach(v => loops.observe(v));
+})();
+</script>
+<script>
+// Top bar: a copy of the nav that only exists (display:block) once the hero has scrolled past.
+(() => {
+  const nav = document.querySelector("nav"), hero = document.getElementById("top");
+  const bar = nav.cloneNode(true);
+  bar.classList.add("bar");
+  bar.setAttribute("aria-label", "Top bar");
+  nav.after(bar);
+  const update = () => bar.classList.toggle("show", hero.getBoundingClientRect().bottom < 68);
+  addEventListener("scroll", update, { passive: true });
+  addEventListener("resize", update);
+  update();
 })();
 </script>
 </body>
