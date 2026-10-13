@@ -77,6 +77,11 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
 .hero { padding: 56px 0 80px; }
 .hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
 .hero .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+/* Phones: the three hero buttons side by side on one row, a bit smaller. */
+@media (max-width: 600px) {
+  .hero .cta { flex-wrap: nowrap; gap: 8px; }
+  .hero .cta .btn { flex: 0 1 auto; justify-content: center; padding: 13px clamp(10px, 3.6vw, 18px); font-size: clamp(13px, 3.9vw, 15px); white-space: nowrap; }
+}
 .hero small { display: block; margin-top: 14px; color: var(--muted); font-size: 14px; font-weight: 500; }
 .reel { width: 100%; max-width: 380px; margin: 0 auto; aspect-ratio: 9 / 16; border-radius: 34px; overflow: hidden; background: var(--pink); }
 .reel video { width: 100%; height: 100%; object-fit: cover; display: block; }
