@@ -84,14 +84,6 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
 .steps .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 44px; }
 .steps .num { font-size: 64px; font-weight: 900; letter-spacing: -0.05em; line-height: 1; }
 .steps p { color: rgba(0, 0, 0, 0.72); font-weight: 500; font-size: 17px; }
-.why { margin-top: 56px; }
-.why h3 { font-size: 30px; }
-.why .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
-.why .tile { background: #000; color: #fff; border-radius: 24px; padding: 22px 24px; }
-.why .tile h4 { margin: 0; font-size: 20px; font-weight: 900; letter-spacing: -0.03em; }
-.why .tile p { color: var(--muted); margin: 8px 0 0; font-size: 16px; }
-.why .tile .kind { color: var(--pink); font-weight: 800; font-size: 14px; letter-spacing: 0.01em; margin-bottom: 8px; }
-.why .note { margin: 14px 0 0; color: rgba(0, 0, 0, 0.72); font-weight: 600; font-size: 15px; }
 
 /* Features */
 .features { padding: 100px 0 40px; }
@@ -131,6 +123,10 @@ summary::-webkit-details-marker { display: none; }
 summary::after { content: "+"; color: var(--pink); font-size: 24px; line-height: 1; }
 details[open] summary::after { content: "–"; }
 details p { color: var(--muted); font-weight: 500; margin: 12px 0 0; }
+details p b { color: var(--white); font-weight: 800; }
+/* Under the three steps: a jump to the FAQ (what you need, why an iPhone). */
+.steps-faq { margin: 44px 0 0; }
+.steps .btn-tile { background: #000; }
 
 /* Beta form */
 .maker { margin: 18px 0 0; font-weight: 800; font-size: 16px; color: var(--pink); }
@@ -264,7 +260,7 @@ footer a { text-decoration: none; }
   .hero .wrap, .beta .wrap { grid-template-columns: 1fr; }
   .hero { padding-top: 28px; }
   .reel { max-width: 320px; }
-  .steps .grid, .features .grid, .why .tiles { grid-template-columns: 1fr; }
+  .steps .grid, .features .grid { grid-template-columns: 1fr; }
   .nav-right a.ig { display: none; }
   .card .phone { width: 64%; }
   .premium .wrap { grid-template-columns: 1fr; }
@@ -297,6 +293,7 @@ footer a { text-decoration: none; }
       <div class="cta">
         <a class="btn btn-pink" href="#beta">Join the beta</a>
         <a class="btn btn-tile" href="#how">How it works</a>
+        <a class="btn btn-tile" href="#faq">FAQ</a>
       </div>
       <small>Free to start. Straight from the stick you played on CDJs. No laptop after the gig.</small>
     </div>
@@ -326,44 +323,7 @@ footer a { text-decoration: none; }
         <p>Share your night straight to your story, the moment the gig's over. And on the 1st, your whole month is waiting.</p>
       </div>
     </div>
-    <div class="why">
-      <h3>Why your iPhone?</h3>
-      <div class="tiles">
-        <div class="tile">
-          <h4>Already in your pocket.</h4>
-          <p>No laptop needed: plug your stick straight into your iPhone, backstage or in the taxi home.</p>
-        </div>
-        <div class="tile">
-          <h4>Where your stories live.</h4>
-          <p>From your set to your Instagram story in one tap, no sending files around.</p>
-        </div>
-        <div class="tile">
-          <h4>Nothing leaves your phone.</h4>
-          <p>No upload, no account. It even works without signal.</p>
-        </div>
-      </div>
-    </div>
-    <div class="why" id="need">
-      <h3>What you need.</h3>
-      <div class="tiles">
-        <div class="tile">
-          <div class="kind">USB-C iPhone + USB-C stick</div>
-          <h4>Nothing. Plug it in.</h4>
-          <p>iPhone 15 and newer take your stick straight away.</p>
-        </div>
-        <div class="tile">
-          <div class="kind">USB-C iPhone + USB-A stick</div>
-          <h4>One small adapter.</h4>
-          <p>Any USB-C to USB-A adapter does the job.</p>
-        </div>
-        <div class="tile">
-          <div class="kind">Lightning iPhone</div>
-          <h4>That works too.</h4>
-          <p>Use Apple's Lightning to USB 3 Camera Adapter. If your stick needs more power, plug a charger into the adapter.</p>
-        </div>
-      </div>
-      <p class="note">Works on any iPhone with iOS 18 or newer: iPhone XS, XR and later, and iPhone SE (2nd generation) and later. Same stick as in the booth, nothing to reformat.</p>
-    </div>
+    <p class="steps-faq"><a class="btn btn-tile" href="#faq">What do I need? Why an iPhone? Check the FAQ <span aria-hidden="true">↓</span></a></p>
   </div>
 </section>
 
@@ -535,9 +495,9 @@ footer a { text-decoration: none; }
   <div class="wrap">
     <h2>Questions?</h2>
     <div class="list">
-      <details><summary>Why an iPhone app and not a website?</summary><p>No laptop, no upload. Just the phone that's already in your pocket after the gig. Your iPhone reads the stick directly, your stories are right there, and nothing gets uploaded.</p></details>
+      <details><summary>Why an iPhone app and not a website?</summary><p><b>Already in your pocket.</b> No laptop needed: plug your stick straight into your iPhone, backstage or in the taxi home.</p><p><b>Where your stories live.</b> From your set to your Instagram story in one tap, no sending files around.</p><p><b>Nothing leaves your phone.</b> No upload, no account. It even works without signal.</p></details>
+      <details><summary>What do I need?</summary><p><b>USB-C iPhone + USB-C stick:</b> nothing. Plug it in. iPhone 15 and newer take your stick straight away.</p><p><b>USB-C iPhone + USB-A stick:</b> one small adapter. Any USB-C to USB-A adapter does the job.</p><p><b>Lightning iPhone:</b> that works too. Use Apple's Lightning to USB 3 Camera Adapter. If your stick needs more power, plug a charger into the adapter.</p><p>Works on any iPhone with iOS 18 or newer: iPhone XS, XR and later, and iPhone SE (2nd generation) and later. Same stick as in the booth, nothing to reformat.</p></details>
       <details><summary>Do I need rekordbox on my Mac or PC?</summary><p>Only to prepare your stick, like you already do. After the gig, no laptop and no syncing: plug the stick into your iPhone and DJ Rewind reads your history straight from it.</p></details>
-      <details><summary>My iPhone has Lightning, or my stick is USB-A. Does it work?</summary><p>Yes. Lightning iPhones work with Apple's Lightning to USB 3 Camera Adapter, and a USB-A stick on a USB-C iPhone just needs a USB-C to USB-A adapter. You need iOS 18 or newer, so iPhone XS, XR or later, or iPhone SE (2nd generation) or later.</p></details>
       <details><summary>Does it change anything on my USB stick?</summary><p>Never. DJ Rewind only reads your play history. Your stick, playlists and cue points stay exactly as they were.</p></details>
       <details><summary>Which sticks and players work?</summary><p>USB sticks exported from rekordbox that you played from on club players. During the beta I'm testing as many players as I can, so tell me which ones you use.</p></details>
       <details><summary>Where does my data go?</summary><p>It stays with you. During the beta, everything lives on your phone. In the App Store version, it also backs up to your iCloud: new iPhone, same Rewinds.</p></details>
