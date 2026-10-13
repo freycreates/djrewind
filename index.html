@@ -59,6 +59,8 @@ nav.bar.show { display: block; }
   nav.bar { background: rgba(0, 0, 0, 0.62); backdrop-filter: blur(22px) saturate(1.5); -webkit-backdrop-filter: blur(22px) saturate(1.5); }
 }
 @keyframes bar-in { from { transform: translateY(-100%); } }
+/* Join the beta: the big button in the header at the top, the bar's button once the header has scrolled past. Never both. */
+nav:not(.bar) .nav-right .btn { display: none; }
 @media (prefers-reduced-motion: reduce) { nav.bar { animation: none; } }
 nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 900; font-size: 22px; letter-spacing: -0.04em; color: var(--pink); }
